@@ -8,6 +8,7 @@
 #include<mmsystem.h>//多媒体设备接口的头文件
 #include<string>
 #include"logo.h"
+#include"star.h"
 #pragma comment(lib,"winmm.lib")//Media control interface
 //这条指令和你在工程中添加"winmm.lib"的功能一样，告诉编译器要导入winmm库
 
@@ -15,6 +16,7 @@
 void Welcome();//进入程序运行界面
 void write(DWORD&);
 void clear(DWORD*);
+void moon();
 
 int main()
 {
@@ -46,19 +48,24 @@ int main()
 
 	Logo logo;
 
+	star star(10);
+
 	IMAGE img;
 	loadimage(&img, "./file/couple.jpg", 150, 266);
 
 	BeginBatchDraw();					// 开始批量绘图
 
 	int x = 0, y = 0;
-	
+
 	while (!_kbhit())
 	{
 		righttopArea.updateColor();
 		Sleep(10);
 		clear(pMem);
 		TC = timeGetTime();
+		//star_time++;
+		star.update(0);
+		moon();
 		if (TC - t1 > 0)
 		{
 			logo.getinformation(80, 50, RED, 1);
@@ -87,7 +94,6 @@ int main()
 			righttopArea.show(0);
 		}
 	}
-	
 	_getch();
 	closegraph();
 	return 0;
@@ -132,4 +138,11 @@ void clear(DWORD* pMem)
 				pMem[py1 * 1000 + px1] = pMem[py1 * 1000 + px1 + 1] = BLACK;	// 对显存赋值擦出像素点
 		}
 	}//对像素点进行擦除
+}
+void moon() {
+	setlinecolor(BLACK);
+	setfillcolor(YELLOW);
+	fillcircle(850, 100, 50);
+	setfillcolor(BLACK);
+	fillcircle(880, 90, 50);
 }

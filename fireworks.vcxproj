@@ -132,12 +132,14 @@
     <ClCompile Include="logo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="shape.cpp" />
+    <ClCompile Include="star.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="area.h" />
     <ClInclude Include="firework.h" />
     <ClInclude Include="logo.h" />
     <ClInclude Include="shape.h" />
+    <ClInclude Include="star.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

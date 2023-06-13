@@ -30,6 +30,9 @@
     <ClCompile Include="logo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="star.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="firework.h">
@@ -42,6 +45,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="logo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="star.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
